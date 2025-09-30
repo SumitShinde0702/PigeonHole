@@ -333,19 +333,19 @@ export const HoleSetPage: React.FC = () => {
                     <span className="font-semibold">{collection.length}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Legendary:</span>
+                    <span className="text-muted-foreground">Gem Mint (PSA 10):</span>
                     <span className="font-semibold text-yellow-400">
                       {collection.filter(c => c.rarity === 'legendary').length}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Epic:</span>
+                    <span className="text-muted-foreground">PSA 9.5-10:</span>
                     <span className="font-semibold text-purple-400">
                       {collection.filter(c => c.rarity === 'epic').length}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Rare:</span>
+                    <span className="text-muted-foreground">PSA 8-9:</span>
                     <span className="font-semibold text-blue-400">
                       {collection.filter(c => c.rarity === 'rare').length}
                     </span>
