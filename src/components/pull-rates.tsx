@@ -14,7 +14,8 @@ const pullRates = {
     bg: 'bg-gray-500/20',
     border: 'border-gray-500/50',
     icon: Star,
-    valueRange: '$4-$8'
+    valueRange: '$18-$45',
+    label: 'PSA 6-7 / BGS 6-7'
   },
   rare: {
     rate: '20%',
@@ -22,7 +23,8 @@ const pullRates = {
     bg: 'bg-blue-500/20',
     border: 'border-blue-500/50',
     icon: Zap,
-    valueRange: '$22-$32'
+    valueRange: '$180-$320',
+    label: 'PSA 8-9 / BGS 8-9'
   },
   epic: {
     rate: '8%',
@@ -30,7 +32,8 @@ const pullRates = {
     bg: 'bg-purple-500/20',
     border: 'border-purple-500/50',
     icon: Crown,
-    valueRange: '$70-$90'
+    valueRange: '$1,100-$3,200',
+    label: 'PSA 9.5-10 / BGS 9.5'
   },
   legendary: {
     rate: '2%',
@@ -38,7 +41,8 @@ const pullRates = {
     bg: 'bg-yellow-500/20',
     border: 'border-yellow-500/50',
     icon: Crown,
-    valueRange: '$180-$250'
+    valueRange: '$5,500-$15,000',
+    label: 'BGS 10 Black Label / PSA 10 Pristine'
   }
 };
 
@@ -47,7 +51,7 @@ export const PullRates: React.FC<PullRatesProps> = ({ theme }) => {
     <Card className="p-6 bg-card/50 border-border">
       <h3 className="font-semibold mb-4 flex items-center gap-2">
         <DollarSign className="w-5 h-5 text-primary" />
-        Pull Rates & Values
+        Grade Distribution & Values
       </h3>
       
       <div className="space-y-3">
@@ -61,8 +65,8 @@ export const PullRates: React.FC<PullRatesProps> = ({ theme }) => {
               <div className="flex items-center gap-3">
                 <Icon className={`w-4 h-4 ${config.color}`} />
                 <div>
-                  <div className={`font-semibold capitalize ${config.color}`}>
-                    {rarity}
+                  <div className={`font-semibold ${config.color}`}>
+                    {config.label}
                   </div>
                   <div className="text-xs text-muted-foreground">
                     {config.valueRange}
@@ -85,10 +89,10 @@ export const PullRates: React.FC<PullRatesProps> = ({ theme }) => {
       
       <div className="mt-4 p-3 bg-muted/30 rounded-lg">
         <div className="text-sm text-muted-foreground text-center">
-          <div className="font-semibold mb-1">Expected Value per Pack</div>
-          <div className="text-lg font-bold text-primary">~$15-25</div>
+          <div className="font-semibold mb-1">Expected Value per Hole</div>
+          <div className="text-lg font-bold text-primary">~$150-400</div>
           <div className="text-xs mt-1">
-            Based on current market prices
+            Based on Pokemon TCG graded card market prices
           </div>
         </div>
       </div>

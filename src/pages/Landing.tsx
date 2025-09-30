@@ -29,23 +29,23 @@ export const Landing: React.FC = () => {
   const features = [
     {
       icon: Sparkles,
-      title: 'Pixel Art Cards',
-      description: 'Collect beautiful retro-style trading cards with unique pixel art designs'
+      title: 'Graded Pokemon Cards',
+      description: 'Collect authenticated PSA & BGS graded cards from classic Pokemon TCG sets'
     },
     {
       icon: Coins,
       title: 'Pigeon Coins',
-      description: 'Earn and spend our special currency to unlock rare collectibles'
+      description: 'Earn and spend our special currency to unlock rare graded collectibles'
     },
     {
       icon: Users,
       title: 'Trade & Share',
-      description: 'Connect with other collectors to trade your duplicate cards'
+      description: 'Connect with other collectors to trade your graded Pokemon cards'
     },
     {
       icon: Trophy,
-      title: 'Rare Grails',
-      description: 'Hunt for legendary grail cards with incredible rarity and value'
+      title: 'Grail Cards',
+      description: 'Hunt for PSA 10 Gem Mints and BGS 10 Black Labels - the ultimate prizes'
     }
   ];
 
@@ -77,8 +77,8 @@ export const Landing: React.FC = () => {
               Retro Gacha Collecting
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Step into the arcade and discover rare pixel art collectibles. 
-              Spin the gacha machine, reveal stunning cards, and build your ultimate collection.
+              Step into the arcade and discover authenticated Pokemon TCG graded cards.
+              Open holes, reveal PSA/BGS slabs, and build your ultimate graded collection.
             </p>
           </div>
 

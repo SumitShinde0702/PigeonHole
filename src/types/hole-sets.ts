@@ -29,6 +29,10 @@ export interface CardTemplate {
   theme: string;
   rarity: 'common' | 'rare' | 'epic' | 'legendary';
   estimatedValue: number;
+  gradingCompany?: 'PSA' | 'BGS' | 'CGC';
+  gradeNumber?: string;
+  cardNumber?: string;
+  setName?: string;
 }
 
 export interface RevealedCard {
@@ -40,4 +44,8 @@ export interface RevealedCard {
   theme: string;
   holeSetId: string;
   estimatedValue: number;
+  gradingCompany?: 'PSA' | 'BGS' | 'CGC';
+  gradeNumber?: string;
+  cardNumber?: string;
+  setName?: string;
 }

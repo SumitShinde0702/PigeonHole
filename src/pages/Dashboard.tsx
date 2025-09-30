@@ -177,7 +177,7 @@ export const Dashboard: React.FC = () => {
               Welcome back, {user.username}!
             </h1>
             <p className="text-muted-foreground">
-              Ready to discover your next rare collectible?
+              Ready to discover your next graded Pokemon card?
             </p>
           </div>
 
@@ -186,10 +186,10 @@ export const Dashboard: React.FC = () => {
             {/* Featured Collections */}
             <div className="text-center py-4">
               <h2 className="text-3xl font-bold text-gradient-primary mb-2">
-                Choose Your Collection
+                Choose Your Pokemon Set
               </h2>
               <p className="text-muted-foreground">
-                Each collection has unique themed cards waiting to be discovered
+                Each set features authenticated graded cards from classic Pokemon TCG eras
               </p>
             </div>
 
@@ -202,9 +202,9 @@ export const Dashboard: React.FC = () => {
                   <Gift className="w-8 h-8 text-accent" />
                 </div>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Experience the magic of opening themed boxes with beautiful animations! 
-                  Each box has a unique design based on its rarity tier, and you can choose 
-                  between pull-out or tear-open animations.
+                  Experience the magic of opening graded card boxes with beautiful animations!
+                  Each box has a unique design based on its grade tier, and you can choose
+                  between pull-out or tear-open reveal animations.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   {userHoleSets.slice(0, 4).map((holeSet) => (
@@ -251,13 +251,13 @@ export const Dashboard: React.FC = () => {
               <Card className="p-6 bg-card/50 border-border text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Sparkles className="w-6 h-6 text-yellow-400" />
-                  <h3 className="font-semibold text-lg">Legendary Cards</h3>
+                  <h3 className="font-semibold text-lg">Gem Mint & Black Labels</h3>
                 </div>
                 <div className="text-3xl font-bold text-gradient-accent">
                   {collection.filter(c => c.rarity === 'legendary').length}
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Ultra rare finds
+                  PSA 10 / BGS 10 perfection
                 </p>
               </Card>
 

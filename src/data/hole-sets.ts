@@ -1,396 +1,524 @@
 import { HoleSet, CardPool } from '@/types/hole-sets';
 
-// Cyberpunk Theme Cards
-const cyberpunkCards: CardPool = {
+// Base Set (1999) - The Original 102 Cards
+const baseSetCards: CardPool = {
   common: [
     {
-      id: 'cyber-pigeon-1',
-      name: 'Neon Pigeon',
+      id: 'base-charmander-psa7',
+      name: 'Charmander 46/102 Base Set',
       image: '/placeholder.svg',
-      description: 'A cyberpunk pigeon with glowing neon feathers.',
-      theme: 'cyberpunk',
+      description: 'PSA 7 Near Mint - Light whitening on edges, good centering. Classic starter Pokemon from the original 1999 set.',
+      theme: 'base-set',
       rarity: 'common',
-      estimatedValue: 5
+      estimatedValue: 35,
+      gradingCompany: 'PSA',
+      gradeNumber: '7',
+      cardNumber: '46/102',
+      setName: 'Base Set'
     },
     {
-      id: 'cyber-pigeon-2',
-      name: 'Circuit Breaker',
+      id: 'base-squirtle-psa6',
+      name: 'Squirtle 63/102 Base Set',
       image: '/placeholder.svg',
-      description: 'A pigeon with electric circuits running through its wings.',
-      theme: 'cyberpunk',
+      description: 'PSA 6 Excellent-Near Mint - Minor corner wear, slightly off-center. Iconic water starter.',
+      theme: 'base-set',
       rarity: 'common',
-      estimatedValue: 8
+      estimatedValue: 28,
+      gradingCompany: 'PSA',
+      gradeNumber: '6',
+      cardNumber: '63/102',
+      setName: 'Base Set'
     },
     {
-      id: 'cyber-pigeon-3',
-      name: 'Data Courier',
+      id: 'base-pikachu-bgs7',
+      name: 'Pikachu 58/102 Base Set',
       image: '/placeholder.svg',
-      description: 'A pigeon that carries digital messages across the net.',
-      theme: 'cyberpunk',
+      description: 'BGS 7 Near Mint - The mascot Pokemon! Minor surface scratches, good corners. Yellow cheeks version.',
+      theme: 'base-set',
       rarity: 'common',
-      estimatedValue: 6
+      estimatedValue: 45,
+      gradingCompany: 'BGS',
+      gradeNumber: '7',
+      cardNumber: '58/102',
+      setName: 'Base Set'
     }
   ],
   rare: [
     {
-      id: 'cyber-pigeon-4',
-      name: 'Hologram Pigeon',
+      id: 'base-hitmonchan-psa9',
+      name: 'Hitmonchan 7/102 Base Set Holo',
       image: '/placeholder.svg',
-      description: 'A shimmering holographic pigeon from the future.',
-      theme: 'cyberpunk',
+      description: 'PSA 9 Mint - Excellent centering (55/45), clean surface. One of the better holos in Base Set.',
+      theme: 'base-set',
       rarity: 'rare',
-      estimatedValue: 25
+      estimatedValue: 180,
+      gradingCompany: 'PSA',
+      gradeNumber: '9',
+      cardNumber: '7/102',
+      setName: 'Base Set'
     },
     {
-      id: 'cyber-pigeon-5',
-      name: 'Quantum Messenger',
+      id: 'base-machamp-bgs8',
+      name: 'Machamp 8/102 Base Set Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that exists in multiple dimensions simultaneously.',
-      theme: 'cyberpunk',
+      description: 'BGS 8 Near Mint-Mint - First Edition stamp. Strong subgrades on surface. Fighting-type powerhouse.',
+      theme: 'base-set',
       rarity: 'rare',
-      estimatedValue: 30
+      estimatedValue: 220,
+      gradingCompany: 'BGS',
+      gradeNumber: '8',
+      cardNumber: '8/102',
+      setName: 'Base Set'
     }
   ],
   epic: [
     {
-      id: 'cyber-pigeon-6',
-      name: 'Neural Network',
+      id: 'base-blastoise-psa10',
+      name: 'Blastoise 2/102 Base Set Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon with advanced AI consciousness.',
-      theme: 'cyberpunk',
+      description: 'PSA 10 Gem Mint - Perfect centering (50/50), pristine corners, flawless surface. One of the Big Three!',
+      theme: 'base-set',
       rarity: 'epic',
-      estimatedValue: 75
+      estimatedValue: 2800,
+      gradingCompany: 'PSA',
+      gradeNumber: '10',
+      cardNumber: '2/102',
+      setName: 'Base Set'
     },
     {
-      id: 'cyber-pigeon-7',
-      name: 'Cyber Ghost',
+      id: 'base-venusaur-bgs95',
+      name: 'Venusaur 15/102 Base Set Holo',
       image: '/placeholder.svg',
-      description: 'A phantom pigeon that exists only in cyberspace.',
-      theme: 'cyberpunk',
+      description: 'BGS 9.5 Gem Mint - All 9.5 subgrades. Razor-sharp edges, incredible surface. The grass starter final evolution.',
+      theme: 'base-set',
       rarity: 'epic',
-      estimatedValue: 85
+      estimatedValue: 2200,
+      gradingCompany: 'BGS',
+      gradeNumber: '9.5',
+      cardNumber: '15/102',
+      setName: 'Base Set'
     }
   ],
   legendary: [
     {
-      id: 'cyber-pigeon-8',
-      name: 'AI Overlord',
+      id: 'base-charizard-psa10',
+      name: 'Charizard 4/102 Base Set Shadowless Holo',
       image: '/placeholder.svg',
-      description: 'The legendary AI pigeon that rules the digital realm.',
-      theme: 'cyberpunk',
+      description: 'PSA 10 Gem Mint - THE HOLY GRAIL. Shadowless first edition print. Perfect centering, corners, edges, and surface. Museum quality.',
+      theme: 'base-set',
       rarity: 'legendary',
-      estimatedValue: 200
+      estimatedValue: 15000,
+      gradingCompany: 'PSA',
+      gradeNumber: '10',
+      cardNumber: '4/102',
+      setName: 'Base Set'
     }
   ]
 };
 
-// Fantasy Theme Cards
-const fantasyCards: CardPool = {
+// Jungle Set (1999) - 64 Cards
+const jungleCards: CardPool = {
   common: [
     {
-      id: 'fantasy-pigeon-1',
-      name: 'Forest Guardian',
+      id: 'jungle-pikachu-psa7',
+      name: 'Pikachu 60/64 Jungle',
       image: '/placeholder.svg',
-      description: 'A mystical pigeon protector of ancient forests.',
-      theme: 'fantasy',
+      description: 'PSA 7 Near Mint - Jungle variant with different art. Minor edge wear, solid corners.',
+      theme: 'jungle',
       rarity: 'common',
-      estimatedValue: 5
+      estimatedValue: 32,
+      gradingCompany: 'PSA',
+      gradeNumber: '7',
+      cardNumber: '60/64',
+      setName: 'Jungle'
     },
     {
-      id: 'fantasy-pigeon-2',
-      name: 'Crystal Carrier',
+      id: 'jungle-eevee-bgs6',
+      name: 'Eevee 51/64 Jungle',
       image: '/placeholder.svg',
-      description: 'A pigeon that carries magical crystals in its beak.',
-      theme: 'fantasy',
+      description: 'BGS 6 Excellent-Near Mint - The evolution Pokemon! Slight surface scratches, off-center 60/40.',
+      theme: 'jungle',
       rarity: 'common',
-      estimatedValue: 7
+      estimatedValue: 25,
+      gradingCompany: 'BGS',
+      gradeNumber: '6',
+      cardNumber: '51/64',
+      setName: 'Jungle'
     },
     {
-      id: 'fantasy-pigeon-3',
-      name: 'Wind Whisperer',
+      id: 'jungle-meowth-psa6',
+      name: 'Meowth 56/64 Jungle',
       image: '/placeholder.svg',
-      description: 'A pigeon that speaks the language of the wind.',
-      theme: 'fantasy',
+      description: 'PSA 6 Excellent-Near Mint - Team Rocket\'s favorite! Light corner wear, good overall condition.',
+      theme: 'jungle',
       rarity: 'common',
-      estimatedValue: 6
+      estimatedValue: 22,
+      gradingCompany: 'PSA',
+      gradeNumber: '6',
+      cardNumber: '56/64',
+      setName: 'Jungle'
     }
   ],
   rare: [
     {
-      id: 'fantasy-pigeon-4',
-      name: 'Dragon Rider',
+      id: 'jungle-scyther-psa9',
+      name: 'Scyther 10/64 Jungle Holo',
       image: '/placeholder.svg',
-      description: 'A brave pigeon that rides alongside dragons.',
-      theme: 'fantasy',
+      description: 'PSA 9 Mint - One of the most playable cards from Jungle. Sharp corners, clean holo pattern.',
+      theme: 'jungle',
       rarity: 'rare',
-      estimatedValue: 28
+      estimatedValue: 280,
+      gradingCompany: 'PSA',
+      gradeNumber: '9',
+      cardNumber: '10/64',
+      setName: 'Jungle'
     },
     {
-      id: 'fantasy-pigeon-5',
-      name: 'Phoenix Feather',
+      id: 'jungle-pinsir-bgs8',
+      name: 'Pinsir 9/64 Jungle Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon blessed with phoenix-like immortality.',
-      theme: 'fantasy',
+      description: 'BGS 8 Near Mint-Mint - Bug-type with great artwork. Centering 60/40, strong surface grade.',
+      theme: 'jungle',
       rarity: 'rare',
-      estimatedValue: 32
+      estimatedValue: 195,
+      gradingCompany: 'BGS',
+      gradeNumber: '8',
+      cardNumber: '9/64',
+      setName: 'Jungle'
     }
   ],
   epic: [
     {
-      id: 'fantasy-pigeon-6',
-      name: 'Mystic Oracle',
+      id: 'jungle-vaporeon-psa10',
+      name: 'Vaporeon 12/64 Jungle Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that can see into the future.',
-      theme: 'fantasy',
+      description: 'PSA 10 Gem Mint - Eevee evolution with stunning holo. Perfect in every aspect. Highly sought after.',
+      theme: 'jungle',
       rarity: 'epic',
-      estimatedValue: 80
+      estimatedValue: 1200,
+      gradingCompany: 'PSA',
+      gradeNumber: '10',
+      cardNumber: '12/64',
+      setName: 'Jungle'
     },
     {
-      id: 'fantasy-pigeon-7',
-      name: 'Elemental Master',
+      id: 'jungle-flareon-bgs95',
+      name: 'Flareon 3/64 Jungle Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that controls all four elements.',
-      theme: 'fantasy',
+      description: 'BGS 9.5 Gem Mint - Fire-type Eeveelution. All 9.5 subgrades, beautiful holo shimmer.',
+      theme: 'jungle',
       rarity: 'epic',
-      estimatedValue: 90
+      estimatedValue: 1100,
+      gradingCompany: 'BGS',
+      gradeNumber: '9.5',
+      cardNumber: '3/64',
+      setName: 'Jungle'
     }
   ],
   legendary: [
     {
-      id: 'fantasy-pigeon-8',
-      name: 'World Tree Keeper',
+      id: 'jungle-wigglytuff-bgs10black',
+      name: 'Wigglytuff 16/64 Jungle Holo',
       image: '/placeholder.svg',
-      description: 'The ancient pigeon guardian of the mystical World Tree.',
-      theme: 'fantasy',
+      description: 'BGS 10 BLACK LABEL - All perfect 10 subgrades! Centering, corners, edges, surface - flawless. Extremely rare achievement.',
+      theme: 'jungle',
       rarity: 'legendary',
-      estimatedValue: 250
+      estimatedValue: 5500,
+      gradingCompany: 'BGS',
+      gradeNumber: '10',
+      cardNumber: '16/64',
+      setName: 'Jungle'
     }
   ]
 };
 
-// Retro Arcade Theme Cards
-const retroCards: CardPool = {
+// Fossil Set (1999) - 62 Cards
+const fossilCards: CardPool = {
   common: [
     {
-      id: 'retro-pigeon-1',
-      name: 'Pixel Pigeon',
+      id: 'fossil-geodude-psa6',
+      name: 'Geodude 47/62 Fossil',
       image: '/placeholder.svg',
-      description: 'A classic 8-bit pigeon from the golden age of gaming.',
-      theme: 'retro',
+      description: 'PSA 6 Excellent-Near Mint - Rock-type basic. Minor whitening, decent centering.',
+      theme: 'fossil',
       rarity: 'common',
-      estimatedValue: 4
+      estimatedValue: 18,
+      gradingCompany: 'PSA',
+      gradeNumber: '6',
+      cardNumber: '47/62',
+      setName: 'Fossil'
     },
     {
-      id: 'retro-pigeon-2',
-      name: 'Arcade Champion',
+      id: 'fossil-psyduck-bgs7',
+      name: 'Psyduck 53/62 Fossil',
       image: '/placeholder.svg',
-      description: 'A pigeon that mastered every arcade game.',
-      theme: 'retro',
+      description: 'BGS 7 Near Mint - Confused duck Pokemon. Light edge wear, good surface.',
+      theme: 'fossil',
       rarity: 'common',
-      estimatedValue: 6
+      estimatedValue: 20,
+      gradingCompany: 'BGS',
+      gradeNumber: '7',
+      cardNumber: '53/62',
+      setName: 'Fossil'
     },
     {
-      id: 'retro-pigeon-3',
-      name: 'High Score Hero',
+      id: 'fossil-zubat-psa7',
+      name: 'Zubat 57/62 Fossil',
       image: '/placeholder.svg',
-      description: 'A pigeon known for setting unbeatable high scores.',
-      theme: 'retro',
+      description: 'PSA 7 Near Mint - Cave-dwelling bat. Clean card with minor imperfections.',
+      theme: 'fossil',
       rarity: 'common',
-      estimatedValue: 5
+      estimatedValue: 19,
+      gradingCompany: 'PSA',
+      gradeNumber: '7',
+      cardNumber: '57/62',
+      setName: 'Fossil'
     }
   ],
   rare: [
     {
-      id: 'retro-pigeon-4',
-      name: 'Game Over Guardian',
+      id: 'fossil-aerodactyl-psa9',
+      name: 'Aerodactyl 1/62 Fossil Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that appears when games end.',
-      theme: 'retro',
+      description: 'PSA 9 Mint - Prehistoric flying Pokemon. Excellent centering, vibrant holo pattern.',
+      theme: 'fossil',
       rarity: 'rare',
-      estimatedValue: 22
+      estimatedValue: 320,
+      gradingCompany: 'PSA',
+      gradeNumber: '9',
+      cardNumber: '1/62',
+      setName: 'Fossil'
     },
     {
-      id: 'retro-pigeon-5',
-      name: 'Continue Coin',
+      id: 'fossil-kabutops-bgs85',
+      name: 'Kabutops 9/62 Fossil Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that grants extra lives to players.',
-      theme: 'retro',
+      description: 'BGS 8.5 Near Mint-Mint+ - Fossil Pokemon evolution. Strong corners (9), nice surface (9).',
+      theme: 'fossil',
       rarity: 'rare',
-      estimatedValue: 26
+      estimatedValue: 210,
+      gradingCompany: 'BGS',
+      gradeNumber: '8.5',
+      cardNumber: '9/62',
+      setName: 'Fossil'
     }
   ],
   epic: [
     {
-      id: 'retro-pigeon-6',
-      name: 'Retro Legend',
+      id: 'fossil-moltres-psa10',
+      name: 'Moltres 12/62 Fossil Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that transcends all retro games.',
-      theme: 'retro',
+      description: 'PSA 10 Gem Mint - Legendary bird of fire! Perfect centering, no print lines, pristine holo.',
+      theme: 'fossil',
       rarity: 'epic',
-      estimatedValue: 70
+      estimatedValue: 1800,
+      gradingCompany: 'PSA',
+      gradeNumber: '10',
+      cardNumber: '12/62',
+      setName: 'Fossil'
     },
     {
-      id: 'retro-pigeon-7',
-      name: 'Arcade Master',
+      id: 'fossil-zapdos-bgs95',
+      name: 'Zapdos 16/62 Fossil Holo',
       image: '/placeholder.svg',
-      description: 'The ultimate retro gaming pigeon champion.',
-      theme: 'retro',
+      description: 'BGS 9.5 Gem Mint - Electric legendary bird. All subgrades 9.5, stunning card.',
+      theme: 'fossil',
       rarity: 'epic',
-      estimatedValue: 75
+      estimatedValue: 1650,
+      gradingCompany: 'BGS',
+      gradeNumber: '9.5',
+      cardNumber: '16/62',
+      setName: 'Fossil'
     }
   ],
   legendary: [
     {
-      id: 'retro-pigeon-8',
-      name: 'Final Boss',
+      id: 'fossil-dragonite-psa10',
+      name: 'Dragonite 4/62 Fossil Holo',
       image: '/placeholder.svg',
-      description: 'The ultimate pigeon boss of all arcade games.',
-      theme: 'retro',
+      description: 'PSA 10 Gem Mint - The dragon Pokemon! Museum-quality with perfect centering (50/50), razor corners. Completing the original 150!',
+      theme: 'fossil',
       rarity: 'legendary',
-      estimatedValue: 180
+      estimatedValue: 8500,
+      gradingCompany: 'PSA',
+      gradeNumber: '10',
+      cardNumber: '4/62',
+      setName: 'Fossil'
     }
   ]
 };
 
-// Space Theme Cards
-const spaceCards: CardPool = {
+// Gym Heroes (2000) - 132 Cards
+const gymHeroesCards: CardPool = {
   common: [
     {
-      id: 'space-pigeon-1',
-      name: 'Cosmic Courier',
+      id: 'gym-misty-staryu-psa7',
+      name: 'Misty\'s Staryu 90/132 Gym Heroes',
       image: '/placeholder.svg',
-      description: 'A pigeon that delivers messages across galaxies.',
-      theme: 'space',
+      description: 'PSA 7 Near Mint - Cerulean City Gym! Light edge wear, good centering.',
+      theme: 'gym-heroes',
       rarity: 'common',
-      estimatedValue: 6
+      estimatedValue: 22,
+      gradingCompany: 'PSA',
+      gradeNumber: '7',
+      cardNumber: '90/132',
+      setName: 'Gym Heroes'
     },
     {
-      id: 'space-pigeon-2',
-      name: 'Asteroid Navigator',
+      id: 'gym-surge-pikachu-bgs6',
+      name: 'Lt. Surge\'s Pikachu 81/132 Gym Heroes',
       image: '/placeholder.svg',
-      description: 'A pigeon skilled at navigating asteroid fields.',
-      theme: 'space',
+      description: 'BGS 6 Excellent-Near Mint - Vermillion City\'s electric mouse. Minor corner wear.',
+      theme: 'gym-heroes',
       rarity: 'common',
-      estimatedValue: 7
+      estimatedValue: 28,
+      gradingCompany: 'BGS',
+      gradeNumber: '6',
+      cardNumber: '81/132',
+      setName: 'Gym Heroes'
     },
     {
-      id: 'space-pigeon-3',
-      name: 'Stellar Scout',
+      id: 'gym-brock-geodude-psa6',
+      name: 'Brock\'s Geodude 66/132 Gym Heroes',
       image: '/placeholder.svg',
-      description: 'A pigeon that explores distant star systems.',
-      theme: 'space',
+      description: 'PSA 6 Excellent-Near Mint - Pewter City Gym rock-type. Solid condition.',
+      theme: 'gym-heroes',
       rarity: 'common',
-      estimatedValue: 5
+      estimatedValue: 20,
+      gradingCompany: 'PSA',
+      gradeNumber: '6',
+      cardNumber: '66/132',
+      setName: 'Gym Heroes'
     }
   ],
   rare: [
     {
-      id: 'space-pigeon-4',
-      name: 'Black Hole Diver',
+      id: 'gym-erika-vileplume-psa9',
+      name: 'Erika\'s Vileplume 5/132 Gym Heroes Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that can escape from black holes.',
-      theme: 'space',
+      description: 'PSA 9 Mint - Celadon City\'s grass master. Beautiful holo, excellent centering.',
+      theme: 'gym-heroes',
       rarity: 'rare',
-      estimatedValue: 30
+      estimatedValue: 240,
+      gradingCompany: 'PSA',
+      gradeNumber: '9',
+      cardNumber: '5/132',
+      setName: 'Gym Heroes'
     },
     {
-      id: 'space-pigeon-5',
-      name: 'Nebula Navigator',
+      id: 'gym-sabrina-alakazam-bgs8',
+      name: 'Sabrina\'s Alakazam 16/132 Gym Heroes Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that guides ships through colorful nebulas.',
-      theme: 'space',
+      description: 'BGS 8 Near Mint-Mint - Saffron City psychic powerhouse. Strong subgrades.',
+      theme: 'gym-heroes',
       rarity: 'rare',
-      estimatedValue: 28
+      estimatedValue: 285,
+      gradingCompany: 'BGS',
+      gradeNumber: '8',
+      cardNumber: '16/132',
+      setName: 'Gym Heroes'
     }
   ],
   epic: [
     {
-      id: 'space-pigeon-6',
-      name: 'Wormhole Walker',
+      id: 'gym-blaine-charizard-psa10',
+      name: 'Blaine\'s Charizard 2/132 Gym Heroes Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that travels through space-time tunnels.',
-      theme: 'space',
+      description: 'PSA 10 Gem Mint - Charizard from Cinnabar Island! Perfect in every way. Highly collectible gym leader card.',
+      theme: 'gym-heroes',
       rarity: 'epic',
-      estimatedValue: 85
+      estimatedValue: 3200,
+      gradingCompany: 'PSA',
+      gradeNumber: '10',
+      cardNumber: '2/132',
+      setName: 'Gym Heroes'
     },
     {
-      id: 'space-pigeon-7',
-      name: 'Cosmic Guardian',
+      id: 'gym-rocket-mewtwo-bgs95',
+      name: 'Rocket\'s Mewtwo 14/132 Gym Heroes Holo',
       image: '/placeholder.svg',
-      description: 'A pigeon that protects entire solar systems.',
-      theme: 'space',
+      description: 'BGS 9.5 Gem Mint - Dark version of the legendary psychic Pokemon! All subgrades pristine.',
+      theme: 'gym-heroes',
       rarity: 'epic',
-      estimatedValue: 90
+      estimatedValue: 2800,
+      gradingCompany: 'BGS',
+      gradeNumber: '9.5',
+      cardNumber: '14/132',
+      setName: 'Gym Heroes'
     }
   ],
   legendary: [
     {
-      id: 'space-pigeon-8',
-      name: 'Galaxy Guardian',
+      id: 'gym-giovanni-machamp-bgs10black',
+      name: 'Giovanni\'s Machamp 6/132 Gym Heroes Holo',
       image: '/placeholder.svg',
-      description: 'The legendary pigeon protector of entire galaxies.',
-      theme: 'space',
+      description: 'BGS 10 BLACK LABEL - Viridian City Gym Leader\'s ace! All perfect 10s across the board. Investment-grade specimen.',
+      theme: 'gym-heroes',
       rarity: 'legendary',
-      estimatedValue: 220
+      estimatedValue: 7200,
+      gradingCompany: 'BGS',
+      gradeNumber: '10',
+      cardNumber: '6/132',
+      setName: 'Gym Heroes'
     }
   ]
 };
 
 export const holeSets: HoleSet[] = [
   {
-    id: 'cyberpunk-set',
-    name: 'Cyberpunk Collection',
-    description: 'Neon-lit pigeons from the digital future',
-    theme: 'cyberpunk',
+    id: 'base-set',
+    name: 'Base Set 1999',
+    description: 'The original 102 cards that started it all - featuring Charizard, Blastoise, and Venusaur',
+    theme: 'base-set',
     image: '/placeholder.svg',
     totalHoles: 24,
     openedHoles: [],
     costPerHole: 1,
     discountMultiplier: 0.8,
-    cardPool: cyberpunkCards,
+    cardPool: baseSetCards,
     isActive: true,
-    releaseDate: '2024-01-01'
+    releaseDate: '1999-01-09'
   },
   {
-    id: 'fantasy-set',
-    name: 'Mystical Realms',
-    description: 'Magical pigeons from enchanted forests',
-    theme: 'fantasy',
+    id: 'jungle-set',
+    name: 'Jungle Set 1999',
+    description: 'Venture into the wild with 64 cards including Scyther, Vaporeon, and Wigglytuff',
+    theme: 'jungle',
     image: '/placeholder.svg',
     totalHoles: 24,
     openedHoles: [],
     costPerHole: 1,
     discountMultiplier: 0.8,
-    cardPool: fantasyCards,
+    cardPool: jungleCards,
     isActive: true,
-    releaseDate: '2024-01-15'
+    releaseDate: '1999-06-16'
   },
   {
-    id: 'retro-set',
-    name: 'Arcade Legends',
-    description: 'Classic pigeons from the golden age of gaming',
-    theme: 'retro',
+    id: 'fossil-set',
+    name: 'Fossil Set 1999',
+    description: 'Discover prehistoric Pokemon with 62 cards featuring Aerodactyl, Kabutops, and legendary birds',
+    theme: 'fossil',
     image: '/placeholder.svg',
     totalHoles: 24,
     openedHoles: [],
     costPerHole: 1,
     discountMultiplier: 0.8,
-    cardPool: retroCards,
+    cardPool: fossilCards,
     isActive: true,
-    releaseDate: '2024-02-01'
+    releaseDate: '1999-10-10'
   },
   {
-    id: 'space-set',
-    name: 'Cosmic Explorers',
-    description: 'Intergalactic pigeons exploring the universe',
-    theme: 'space',
+    id: 'gym-heroes-set',
+    name: 'Gym Heroes 2000',
+    description: 'Battle Gym Leaders with 132 cards including Blaine\'s Charizard and Sabrina\'s Alakazam',
+    theme: 'gym-heroes',
     image: '/placeholder.svg',
     totalHoles: 24,
     openedHoles: [],
     costPerHole: 1,
     discountMultiplier: 0.8,
-    cardPool: spaceCards,
+    cardPool: gymHeroesCards,
     isActive: true,
-    releaseDate: '2024-02-15'
+    releaseDate: '2000-08-14'
   }
 ];

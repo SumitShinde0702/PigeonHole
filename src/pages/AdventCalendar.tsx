@@ -238,9 +238,9 @@ export const AdventCalendar: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            {holeSet.name} Advent Calendar
+            {holeSet.name} Calendar
           </h1>
-          <p className="text-muted-foreground text-lg">{holeSet.description}</p>
+          <p className="text-muted-foreground text-lg">Open graded card boxes - {holeSet.description}</p>
           <div className="flex items-center justify-center gap-4 mt-4">
             <Badge variant="outline" className="flex items-center gap-1">
               <Coins className="w-4 h-4" />
@@ -407,8 +407,8 @@ export const AdventCalendar: React.FC = () => {
 
         {/* Stats */}
         <div className="text-center text-sm text-muted-foreground">
-          <p>Each box contains a random card from the {holeSet.name} collection</p>
-          <p>Higher rarity boxes have better chances for rare cards!</p>
+          <p>Each box contains a graded Pokemon card from the {holeSet.name}</p>
+          <p>Higher grade boxes have better chances for PSA 10 / BGS 10 gems!</p>
         </div>
       </div>
     </div>

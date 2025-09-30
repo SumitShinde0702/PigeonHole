@@ -16,7 +16,7 @@ interface User {
 export const Collection: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [collection, setCollection] = useState<RevealedCard[]>([]);
-  const [filter, setFilter] = useState<'all' | 'common' | 'rare' | 'grail'>('all');
+  const [filter, setFilter] = useState<'all' | 'common' | 'rare' | 'epic' | 'legendary'>('all');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,18 +39,22 @@ export const Collection: React.FC = () => {
     filter === 'all' || card.rarity === filter
   );
 
-  const rarityConfig = {
+  const rarityConfig: Record<string, { color: string; border: string }> = {
     common: {
-      color: 'bg-muted text-muted-foreground',
-      border: 'border-muted-foreground/20'
+      color: 'bg-gray-500/20 text-gray-400',
+      border: 'border-gray-500/30'
     },
     rare: {
-      color: 'bg-primary/20 text-primary border-primary/30',
-      border: 'border-primary/30'
+      color: 'bg-blue-500/20 text-blue-400',
+      border: 'border-blue-500/30'
     },
-    grail: {
-      color: 'bg-accent/20 text-accent border-accent/30 animate-glow',
-      border: 'border-accent/30'
+    epic: {
+      color: 'bg-purple-500/20 text-purple-400',
+      border: 'border-purple-500/30'
+    },
+    legendary: {
+      color: 'bg-yellow-500/20 text-yellow-400 animate-glow',
+      border: 'border-yellow-500/30'
     }
   };
 
@@ -113,12 +117,19 @@ export const Collection: React.FC = () => {
               Rare ({collection.filter(c => c.rarity === 'rare').length})
             </Button>
             <Button
-              variant={filter === 'grail' ? 'default' : 'outline'}
-              onClick={() => setFilter('grail')}
+              variant={filter === 'epic' ? 'default' : 'outline'}
+              onClick={() => setFilter('epic')}
+              className="arcade-button"
+            >
+              Epic ({collection.filter(c => c.rarity === 'epic').length})
+            </Button>
+            <Button
+              variant={filter === 'legendary' ? 'default' : 'outline'}
+              onClick={() => setFilter('legendary')}
               className="arcade-button"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              Grail ({collection.filter(c => c.rarity === 'grail').length})
+              Gem Mint ({collection.filter(c => c.rarity === 'legendary').length})
             </Button>
           </div>
 
@@ -154,8 +165,8 @@ export const Collection: React.FC = () => {
                       <div className="flex items-center justify-between">
                         <h3 className="font-semibold truncate">{card.name}</h3>
                         <Badge className={config.color}>
-                          {card.rarity}
-                          {card.rarity === 'grail' && <Sparkles className="w-3 h-3 ml-1" />}
+                          {card.rarity === 'legendary' ? 'PSA 10' : card.rarity}
+                          {card.rarity === 'legendary' && <Sparkles className="w-3 h-3 ml-1" />}
                         </Badge>
                       </div>
                       
@@ -175,9 +186,9 @@ export const Collection: React.FC = () => {
                   {filter === 'all' ? 'No cards yet!' : `No ${filter} cards found`}
                 </h3>
                 <p className="text-muted-foreground">
-                  {filter === 'all' 
-                    ? 'Start spinning the gacha machine to build your collection!'
-                    : `Try spinning more to find ${filter} cards, or check other rarities.`
+                  {filter === 'all'
+                    ? 'Start opening holes to build your graded Pokemon card collection!'
+                    : `Try opening more holes to find ${filter === 'legendary' ? 'Gem Mint' : filter} graded cards, or check other grades.`
                   }
                 </p>
                 <Button

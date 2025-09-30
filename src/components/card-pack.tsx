@@ -139,9 +139,9 @@ export const CardPack: React.FC<CardPackProps> = ({
               {/* Purple Covering */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/90 to-purple-700/90"></div>
               
-              {/* Pigeon Logo */}
+              {/* PigeonHole Logo */}
               <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20">
-                <img 
+                <img
                   src={pigeonLogo}
                   alt="PigeonHole Logo"
                   className="w-16 h-16 pixel-art"
@@ -164,7 +164,7 @@ export const CardPack: React.FC<CardPackProps> = ({
                 {/* Top Section */}
                 <div className="text-center">
                   <div className="text-white font-extrabold text-xl mb-2 drop-shadow-lg emboss-title tracking-wide">PIGEONHOLE</div>
-                  <div className="text-white/90 text-sm mb-4 drop-shadow-md">TRADING CARDS</div>
+                  <div className="text-white/90 text-sm mb-4 drop-shadow-md">GRADED POKEMON</div>
                   
                   {/* Pack Art */}
                   <div className="w-32 h-24 mx-auto bg-gradient-to-br from-white/50 to-white/10 rounded-lg border-2 border-white/40 mb-4 flex items-center justify-center shadow-inner">
@@ -177,19 +177,21 @@ export const CardPack: React.FC<CardPackProps> = ({
 
                 {/* Bottom Section with strap */}
                 <div className="text-center relative">
-                  <div className="text-white font-bold text-sm mb-2 drop-shadow-md">{card.theme?.toUpperCase() || 'MYSTERY'}</div>
-                  <div className="text-white/90 text-xs mb-3">5 CARDS INSIDE</div>
-                  
+                  <div className="text-white font-bold text-sm mb-2 drop-shadow-md">{card.setName?.toUpperCase() || card.theme?.toUpperCase() || 'MYSTERY SET'}</div>
+                  <div className="text-white/90 text-xs mb-3">GRADED SLAB INSIDE</div>
+
                   {/* Pack Details */}
                   <div className="bg-white/10 rounded-lg p-2 mb-3 border border-white/20">
-                    <div className="text-white/80 text-xs">GUARANTEED RARE</div>
-                    <div className="text-white/60 text-xs">OR BETTER</div>
+                    <div className="text-white/80 text-xs">AUTHENTICATED</div>
+                    <div className="text-white/60 text-xs">PSA / BGS</div>
                   </div>
                   
-                  {/* Rarity Indicator */}
+                  {/* Grade Indicator */}
                   <div className="px-3 py-1 bg-white/20 rounded-full inline-block border border-white/30">
                     <span className="text-white text-xs font-semibold drop-shadow-md">
-                      {card.rarity.toUpperCase()}
+                      {card.gradingCompany && card.gradeNumber
+                        ? `${card.gradingCompany} ${card.gradeNumber}`
+                        : card.rarity.toUpperCase()}
                     </span>
                   </div>
                   
@@ -252,10 +254,14 @@ export const CardPack: React.FC<CardPackProps> = ({
 
                 {/* Card Content */}
                 <div className="relative z-10 text-center h-full flex flex-col justify-between">
-                  {/* Rarity Badge */}
+                  {/* Grading Badge */}
                   <div className="flex justify-center mb-4">
                     <div className={`px-3 py-1 rounded-full text-xs font-bold ${config.bg} ${config.border} border`}>
-                      <span className={config.color}>{card.rarity.toUpperCase()}</span>
+                      <span className={config.color}>
+                        {card.gradingCompany && card.gradeNumber
+                          ? `${card.gradingCompany} ${card.gradeNumber}`
+                          : card.rarity.toUpperCase()}
+                      </span>
                     </div>
                   </div>
 
@@ -274,9 +280,14 @@ export const CardPack: React.FC<CardPackProps> = ({
                     <p className="text-sm text-muted-foreground mb-2">
                       {card.description}
                     </p>
-                    {card.theme && (
+                    {card.estimatedValue && (
+                      <div className="text-xs text-muted-foreground font-semibold mb-1">
+                        Estimated Value: ${card.estimatedValue}
+                      </div>
+                    )}
+                    {card.setName && (
                       <div className="text-xs text-muted-foreground">
-                        {card.theme.toUpperCase()} THEME
+                        {card.setName.toUpperCase()}
                       </div>
                     )}
                   </div>

@@ -4,6 +4,12 @@
 
 /* PigeonHole Design System - Retro Arcade Gacha Theme
 All colors MUST be HSL for consistent theming.
+
+Rarity tiers map to Pokemon grading scales:
+- Common (Gray): PSA 6-7 / BGS 6-7 (Excellent-Near Mint)
+- Rare (Blue): PSA 8-9 / BGS 8-9 (Near Mint-Mint)
+- Epic (Purple/Pink): PSA 9.5-10 / BGS 9.5 (Gem Mint)
+- Legendary (Gold): BGS 10 Black Label / PSA 10 Pristine (Perfect)
 */
 
 @layer base {
