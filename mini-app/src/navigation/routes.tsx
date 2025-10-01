@@ -2,6 +2,8 @@ import type { ComponentType, JSX } from 'react';
 
 import { Landing } from '@/pages/Landing';
 import { Dashboard } from '@/pages/Dashboard';
+import { Inventory } from '@/pages/Inventory';
+import { Profile } from '@/pages/Profile';
 import { InitDataPage } from '@/pages/InitDataPage.tsx';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage.tsx';
@@ -17,6 +19,8 @@ interface Route {
 export const routes: Route[] = [
   { path: '/', Component: Landing },
   { path: '/dashboard', Component: Dashboard },
+  { path: '/inventory', Component: Inventory },
+  { path: '/profile', Component: Profile },
   { path: '/init-data', Component: InitDataPage, title: 'Init Data' },
   { path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params' },
   { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' },
