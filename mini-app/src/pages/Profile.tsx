@@ -1,14 +1,16 @@
 import React from 'react';
+import { AppRoot, Title, Text, Card } from '@telegram-apps/telegram-ui';
 
 export const Profile: React.FC = () => {
   return (
-    <div className="py-4">
-      <h1 className="text-lg font-semibold mb-2">Profile</h1>
-      <p className="text-sm text-muted-foreground">Account details and settings.</p>
-    </div>
+    <AppRoot appearance="dark" platform="base">
+      <div style={{ padding: '20px' }}>
+        <Title level="2">Profile</Title>
+        <div style={{ height: 16 }} />
+        <Card>
+          <Text>Account details and settings.</Text>
+        </Card>
+      </div>
+    </AppRoot>
   );
 };
-
-export default Profile;
-
-
