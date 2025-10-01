@@ -1,10 +1,7 @@
 import type { ComponentType, JSX } from 'react';
 
-import { Landing } from '@/pigeonhole/pages/Landing';
-import { Dashboard } from '@/pigeonhole/pages/Dashboard';
-import { HoleSetPage } from '@/pigeonhole/pages/HoleSetPage';
-import { Collection } from '@/pigeonhole/pages/Collection';
-import NotFound from '@/pigeonhole/pages/NotFound';
+import { Landing } from '@/pages/Landing';
+import { Dashboard } from '@/pages/Dashboard';
 import { InitDataPage } from '@/pages/InitDataPage.tsx';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage.tsx';
@@ -20,8 +17,6 @@ interface Route {
 export const routes: Route[] = [
   { path: '/', Component: Landing },
   { path: '/dashboard', Component: Dashboard },
-  { path: '/hole-set/:holeSetId', Component: HoleSetPage },
-  { path: '/collection', Component: Collection },
   { path: '/init-data', Component: InitDataPage, title: 'Init Data' },
   { path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params' },
   { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' },
@@ -48,5 +43,4 @@ export const routes: Route[] = [
       </svg>
     ),
   },
-  { path: '*', Component: NotFound },
 ];
