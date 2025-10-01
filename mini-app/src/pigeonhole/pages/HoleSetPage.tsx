@@ -300,28 +300,24 @@ export const HoleSetPage: React.FC = () => {
             </Card>
           </div>
 
-          {/* Main Content */}
-          <div className="grid lg:grid-cols-3 gap-8">
+          {/* Main Content - stacked for mobile */}
+          <div className="grid gap-8">
             {/* Pigeon Hole */}
-            <div className="lg:col-span-2">
-              <Card className="p-8 bg-card/50 border-border text-center">
-                <PigeonHole
-                  credits={user.credits}
-                  onOpenHole={handleOpenHole}
-                  onOpenAll={handleOpenAll}
-                  isOpening={isOpening}
-                  openedHoles={holeSet.openedHoles}
-                  pendingHoleNumber={pendingHoleNumber}
-                />
-              </Card>
-            </div>
+            <Card className="p-6 sm:p-8 bg-card/50 border-border text-center">
+              <PigeonHole
+                credits={user.credits}
+                onOpenHole={handleOpenHole}
+                onOpenAll={handleOpenAll}
+                isOpening={isOpening}
+                openedHoles={holeSet.openedHoles}
+                pendingHoleNumber={pendingHoleNumber}
+              />
+            </Card>
 
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Pull Rates */}
-              <PullRates theme={holeSet.theme} />
+            {/* Grade Distribution (Pull Rates) stacked below */}
+            <PullRates theme={holeSet.theme} />
 
-              {/* Collection Stats */}
+            {/* Collection Stats */}
               <Card className="p-6 bg-card/50 border-border">
                 <h3 className="font-semibold mb-4 flex items-center gap-2">
                   <Package className="w-5 h-5 text-primary" />
@@ -409,7 +405,6 @@ export const HoleSetPage: React.FC = () => {
                   )}
                 </div>
               </Card>
-            </div>
           </div>
         </div>
       </main>

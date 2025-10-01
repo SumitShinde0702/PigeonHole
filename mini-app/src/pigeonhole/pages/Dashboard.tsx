@@ -4,9 +4,8 @@ import { Navbar } from '@/pigeonhole/components/ui/navbar';
 import { HoleSetCard } from '@/pigeonhole/components/hole-set-card';
 import { CardPack } from '@/pigeonhole/components/card-pack';
 import { RevealedCard } from '@/pigeonhole/types/hole-sets';
-import { Button } from '@/pigeonhole/components/ui/button';
 import { Card } from '@/pigeonhole/components/ui/card';
-import { Package, Sparkles, TrendingUp, Calendar, Gift } from 'lucide-react';
+import { Package, Sparkles, TrendingUp } from 'lucide-react';
 import { toast } from '@/pigeonhole/hooks/use-toast';
 import { holeSets } from '@/pigeonhole/data/hole-sets';
 import { HoleSet } from '@/pigeonhole/types/hole-sets';
@@ -107,9 +106,7 @@ export const Dashboard: React.FC = () => {
     navigate(`/hole-set/${holeSetId}`);
   };
 
-  const handleAdventCalendar = (holeSetId: string) => {
-    navigate(`/advent-calendar/${holeSetId}`);
-  };
+  // Advent Calendar removed
 
 
   const handleKeep = (card: RevealedCard) => {
@@ -200,36 +197,10 @@ export const Dashboard: React.FC = () => {
               </p>
             </div>
 
-            {/* Advent Calendar Feature */}
-            <Card className="p-6 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30">
-              <div className="text-center">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Calendar className="w-8 h-8 text-primary" />
-                  <h3 className="text-2xl font-bold text-gradient-primary">Advent Calendar Mode</h3>
-                  <Gift className="w-8 h-8 text-accent" />
-                </div>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Experience the magic of opening graded card boxes with beautiful animations!
-                  Each box has a unique design based on its grade tier, and you can choose
-                  between pull-out or tear-open reveal animations.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  {userHoleSets.slice(0, 4).map((holeSet) => (
-                    <Button
-                      key={holeSet.id}
-                      onClick={() => handleAdventCalendar(holeSet.id)}
-                      className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground font-semibold px-6 py-3"
-                    >
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {holeSet.name} Calendar
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            </Card>
+            {/* Advent Calendar section removed */}
 
-            {/* Hole Sets Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+            {/* Hole Sets List (horizontal cards stacked) */}
+            <div className="grid grid-cols-1 gap-4">
               {userHoleSets.map((holeSet) => (
                 <HoleSetCard
                   key={holeSet.id}

@@ -106,15 +106,15 @@ export const PigeonHole: React.FC<PigeonHoleProps> = ({
   return (
     <div className="flex flex-col items-center gap-6 p-4">
       {/* Hole Grid */}
-      <div className="relative">
-        <div className="grid grid-cols-6 gap-3 p-6 bg-gradient-to-br from-destructive/20 to-destructive/40 rounded-xl border-2 border-destructive/50 shadow-2xl">
+      <div className="relative w-full">
+        <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-3 p-4 sm:p-6 bg-gradient-to-br from-destructive/20 to-destructive/40 rounded-xl border-2 border-destructive/50 shadow-2xl">
           {holes.map((hole) => (
             <button
               key={hole.id}
               onClick={() => handleOpenHole(hole.id)}
               disabled={hole.isOpen || hole.isOpening || credits < 1 || isOpening}
               className={`
-                relative w-16 h-16 rounded-lg border-2 transition-all duration-300
+                relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg border-2 transition-all duration-300
                 ${hole.isOpen 
                   ? 'bg-background/80 border-muted shadow-inner cursor-default' 
                   : hole.isOpening
@@ -127,7 +127,7 @@ export const PigeonHole: React.FC<PigeonHoleProps> = ({
             >
               {/* Hole Number */}
               <span className={`
-                absolute inset-0 flex items-center justify-center font-bold text-sm
+                absolute inset-0 flex items-center justify-center font-bold text-xs sm:text-sm
                 ${hole.isOpen ? 'text-muted-foreground' : 'text-secondary-foreground'}
               `}>
                 {hole.id}

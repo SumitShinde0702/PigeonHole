@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/pigeonhole/components/ui/button';
 import { Card } from '@/pigeonhole/components/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/pigeonhole/components/ui/dialog';
-import { Input } from '@/pigeonhole/components/ui/input';
-import { Label } from '@/pigeonhole/components/ui/label';
 import { Sparkles, Coins, Users, Trophy } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { retrieveLaunchParams } from '@telegram-apps/sdk-react';
 import pigeonMascot from '@/pigeonhole/assets/pigeon-mascot.png';
 
 export const Landing: React.FC = () => {
-  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
   const navigate = useNavigate();
 
-  const handleSignUp = () => {
-    // Mock sign up - in real app would connect to auth system
-    if (email && username) {
-      localStorage.setItem('user', JSON.stringify({
-        username,
-        email,
-        credits: 5 // Free starter credits
-      }));
-      navigate('/dashboard');
-    }
+  const handleStart = () => {
+    const lp = retrieveLaunchParams();
+    const tgUser = (lp as any)?.initDataUnsafe?.user;
+    const inferredUsername = tgUser?.username || tgUser?.first_name || 'Collector';
+    localStorage.setItem('user', JSON.stringify({
+      username: inferredUsername,
+      email: undefined,
+      credits: 5,
+    }));
+    navigate('/dashboard');
   };
 
   const features = [
@@ -84,58 +79,14 @@ export const Landing: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex gap-4 justify-center">
-            <Dialog open={isSignUpOpen} onOpenChange={setIsSignUpOpen}>
-              <DialogTrigger asChild>
-                <Button 
-                  size="lg"
-                  className="bg-gradient-primary hover:bg-primary/90 arcade-button text-lg px-8 py-3 retro-border hover-glow"
-                >
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Start Collecting
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="bg-card border-border">
-                <DialogHeader>
-                  <DialogTitle className="text-center text-gradient-primary">
-                    Join PigeonHole
-                  </DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4 pt-4">
-                  <div>
-                    <Label htmlFor="username">Username</Label>
-                    <Input
-                      id="username"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      placeholder="Choose your collector name"
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      className="mt-1"
-                    />
-                  </div>
-                  <Button 
-                    onClick={handleSignUp}
-                    className="w-full bg-gradient-secondary hover:bg-secondary/90 arcade-button"
-                    disabled={!email || !username}
-                  >
-                    Join the Adventure
-                  </Button>
-                  <p className="text-xs text-center text-muted-foreground">
-                    Start with 5 free Pigeon Coins!
-                  </p>
-                </div>
-              </DialogContent>
-            </Dialog>
-
+            <Button 
+              size="lg"
+              onClick={handleStart}
+              className="bg-gradient-primary hover:bg-primary/90 arcade-button text-lg px-8 py-3 retro-border hover-glow"
+            >
+              <Sparkles className="w-5 h-5 mr-2" />
+              Start Collecting
+            </Button>
             <Button 
               variant="outline"
               size="lg"

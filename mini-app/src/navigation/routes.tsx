@@ -4,7 +4,6 @@ import { Landing } from '@/pigeonhole/pages/Landing';
 import { Dashboard } from '@/pigeonhole/pages/Dashboard';
 import { HoleSetPage } from '@/pigeonhole/pages/HoleSetPage';
 import { Collection } from '@/pigeonhole/pages/Collection';
-import { AdventCalendar } from '@/pigeonhole/pages/AdventCalendar';
 import NotFound from '@/pigeonhole/pages/NotFound';
 import { InitDataPage } from '@/pages/InitDataPage.tsx';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
@@ -23,7 +22,6 @@ export const routes: Route[] = [
   { path: '/dashboard', Component: Dashboard },
   { path: '/hole-set/:holeSetId', Component: HoleSetPage },
   { path: '/collection', Component: Collection },
-  { path: '/advent-calendar/:holeSetId?', Component: AdventCalendar },
   { path: '/init-data', Component: InitDataPage, title: 'Init Data' },
   { path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params' },
   { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' },
