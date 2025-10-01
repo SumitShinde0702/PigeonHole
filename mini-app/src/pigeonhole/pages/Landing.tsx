@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '@/pigeonhole/components/ui/button';
-import { Card } from '@/pigeonhole/components/ui/card';
 import { Sparkles, Coins, Users, Trophy } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { retrieveLaunchParams } from '@telegram-apps/sdk-react';

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { retrieveLaunchParams, useSignal, isMiniAppDark } from '@telegram-apps/sdk-react';
 import { AppRoot } from '@telegram-apps/telegram-ui';
-import { Button } from '@/pigeonhole/components/ui/button';
 import { Card } from '@/pigeonhole/components/ui/card';
 import { Badge } from '@/pigeonhole/components/ui/badge';
 import { Package, Coins, Calendar, ArrowRight } from 'lucide-react';
