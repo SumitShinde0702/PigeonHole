@@ -1,5 +1,4 @@
 import React from 'react';
-import { AppRoot } from '@telegram-apps/telegram-ui';
 
 export const Inventory: React.FC = () => {
   return (
