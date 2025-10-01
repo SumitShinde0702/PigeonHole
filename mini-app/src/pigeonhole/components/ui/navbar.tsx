@@ -15,41 +15,40 @@ export const Navbar: React.FC<NavbarProps> = ({
   onSignIn 
 }) => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <img 
             src={pigeonLogo}
             alt="PigeonHole Logo"
-            className="w-8 h-8 pixel-art animate-bounce-slow"
+            className="w-6 h-6"
           />
-          <h1 className="text-xl font-bold text-gradient-primary">
+          <h1 className="text-lg font-semibold text-foreground">
             PigeonHole
           </h1>
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {username ? (
             <>
               {/* Credits Display */}
-              <div className="flex items-center gap-2 bg-secondary/20 px-3 py-1 rounded-lg border border-secondary/30">
-                <Coins className="w-4 h-4 text-secondary" />
-                <span className="text-secondary font-semibold">{credits}</span>
+              <div className="flex items-center gap-1 bg-muted px-2 py-1 rounded-md">
+                <Coins className="w-3 h-3 text-muted-foreground" />
+                <span className="text-sm font-medium">{credits}</span>
               </div>
 
               {/* User Menu */}
-              <div className="flex items-center gap-2 bg-primary/20 px-3 py-1 rounded-lg border border-primary/30">
-                <User className="w-4 h-4 text-primary" />
-                <span className="text-primary font-medium">{username}</span>
+              <div className="flex items-center gap-1">
+                <User className="w-3 h-3 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">{username}</span>
               </div>
             </>
           ) : (
             <Button 
               onClick={onSignIn}
-              variant="default"
-              className="bg-gradient-primary hover:bg-primary/90 arcade-button"
+              size="sm"
             >
               Sign In
             </Button>

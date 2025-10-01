@@ -173,84 +173,48 @@ export const Dashboard: React.FC = () => {
         username={user.username}
       />
 
-      <main className="pt-20 px-4">
-        <div className="max-w-6xl mx-auto">
+      <main className="pt-16 px-4">
+        <div className="max-w-md mx-auto">
           {/* Dashboard Header */}
-          <div className="text-center py-8">
-            <h1 className="text-4xl font-bold text-gradient-primary mb-2">
+          <div className="text-center py-6">
+            <h1 className="text-2xl font-semibold text-foreground mb-1">
               Welcome back, {user.username}!
             </h1>
-            <p className="text-muted-foreground">
-              Ready to discover your next graded Pokemon card?
+            <p className="text-sm text-muted-foreground">
+              Choose a Pokemon set to start collecting
             </p>
           </div>
 
-          {/* Main Content */}
-          <div className="space-y-8">
-            {/* Featured Collections */}
-            <div className="text-center py-4">
-              <h2 className="text-3xl font-bold text-gradient-primary mb-2">
-                Choose Your Pokemon Set
-              </h2>
-              <p className="text-muted-foreground">
-                Each set features authenticated graded cards from classic Pokemon TCG eras
-              </p>
-            </div>
-
             {/* Advent Calendar section removed */}
 
-            {/* Hole Sets List (horizontal cards stacked) */}
-            <div className="grid grid-cols-1 gap-4">
-              {userHoleSets.map((holeSet) => (
-                <HoleSetCard
-                  key={holeSet.id}
-                  holeSet={holeSet}
-                  onSelect={handleHoleSetSelect}
-                  userCredits={user?.credits || 0}
-                />
-              ))}
+          {/* Hole Sets List */}
+          <div className="space-y-3">
+            {userHoleSets.map((holeSet) => (
+              <HoleSetCard
+                key={holeSet.id}
+                holeSet={holeSet}
+                onSelect={handleHoleSetSelect}
+                userCredits={user?.credits || 0}
+              />
+            ))}
+          </div>
+
+          {/* Simple Stats */}
+          <div className="mt-8 space-y-3">
+            <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+              <div className="flex items-center gap-2">
+                <Package className="w-4 h-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">Total Cards</span>
+              </div>
+              <span className="font-semibold">{collection.length}</span>
             </div>
-
-            {/* Quick Stats */}
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6 bg-card/50 border-border text-center">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <Package className="w-6 h-6 text-primary" />
-                  <h3 className="font-semibold text-lg">Total Cards</h3>
-                </div>
-                <div className="text-3xl font-bold text-gradient-primary">
-                  {collection.length}
-                </div>
-                <p className="text-sm text-muted-foreground mt-1">
-                  In your collection
-                </p>
-              </Card>
-
-              <Card className="p-6 bg-card/50 border-border text-center">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <Sparkles className="w-6 h-6 text-yellow-400" />
-                  <h3 className="font-semibold text-lg">Gem Mint & Black Labels</h3>
-                </div>
-                <div className="text-3xl font-bold text-gradient-accent">
-                  {collection.filter(c => c.rarity === 'legendary').length}
-                </div>
-                <p className="text-sm text-muted-foreground mt-1">
-                  PSA 10 / BGS 10 perfection
-                </p>
-              </Card>
-
-              <Card className="p-6 bg-card/50 border-border text-center">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <TrendingUp className="w-6 h-6 text-secondary" />
-                  <h3 className="font-semibold text-lg">Collections</h3>
-                </div>
-                <div className="text-3xl font-bold text-gradient-secondary">
-                  {userHoleSets.filter(set => set.openedHoles.length > 0).length}
-                </div>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Active sets
-                </p>
-              </Card>
+            
+            <div className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">Gem Mint Cards</span>
+              </div>
+              <span className="font-semibold">{collection.filter(c => c.rarity === 'legendary').length}</span>
             </div>
           </div>
         </div>

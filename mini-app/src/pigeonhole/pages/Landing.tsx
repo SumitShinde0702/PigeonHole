@@ -47,50 +47,44 @@ export const Landing: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section className="flex-1 flex items-center justify-center px-4 py-12">
+        <div className="max-w-md mx-auto text-center space-y-6">
           {/* Hero Mascot */}
           <div className="flex justify-center">
-            <div className="relative">
-              <img 
-                src={pigeonMascot}
-                alt="PigeonHole Mascot"
-                className="w-48 h-48 pixel-art animate-bounce-slow hover-lift"
-              />
-              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-2 py-1 rounded-full text-xs font-bold animate-glow">
-                NEW!
-              </div>
-            </div>
+            <img 
+              src={pigeonMascot}
+              alt="PigeonHole Mascot"
+              className="w-32 h-32"
+            />
           </div>
 
           {/* Hero Text */}
-          <div className="space-y-4">
-            <h1 className="text-6xl font-bold text-gradient-primary leading-tight">
+          <div className="space-y-3">
+            <h1 className="text-3xl font-bold text-foreground">
               PigeonHole
             </h1>
-            <p className="text-2xl text-gradient-secondary font-semibold">
-              Retro Gacha Collecting
+            <p className="text-lg text-muted-foreground">
+              Collect graded Pokemon cards
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Step into the arcade and discover authenticated Pokemon TCG graded cards.
-              Open holes, reveal PSA/BGS slabs, and build your ultimate graded collection.
+            <p className="text-sm text-muted-foreground">
+              Open holes, reveal PSA/BGS slabs, and build your collection
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex gap-4 justify-center">
+          <div className="space-y-3">
             <Button 
               size="lg"
               onClick={handleStart}
-              className="bg-gradient-primary hover:bg-primary/90 arcade-button text-lg px-8 py-3 retro-border hover-glow"
+              className="w-full"
             >
-              <Sparkles className="w-5 h-5 mr-2" />
+              <Sparkles className="w-4 h-4 mr-2" />
               Start Collecting
             </Button>
             <Button 
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary/10 arcade-button text-lg px-8 py-3"
+              className="w-full"
             >
               Learn More
             </Button>
@@ -99,36 +93,36 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-card/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gradient-primary">
-            Why Collectors Love PigeonHole
+      <section className="py-12 px-4 bg-muted/20">
+        <div className="max-w-md mx-auto">
+          <h2 className="text-xl font-semibold text-center mb-6 text-foreground">
+            Features
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="space-y-4">
             {features.map((feature, index) => (
-              <Card 
+              <div 
                 key={index}
-                className="p-6 text-center hover-lift bg-card/50 border-border hover:border-primary/50 transition-all duration-300"
+                className="flex items-start gap-3 p-3 bg-card rounded-lg"
               >
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-primary/20 border border-primary/30">
-                    <feature.icon className="w-6 h-6 text-primary" />
-                  </div>
+                <div className="p-2 rounded-md bg-muted">
+                  <feature.icon className="w-4 h-4 text-muted-foreground" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
-              </Card>
+                <div>
+                  <h3 className="font-medium text-sm mb-1">{feature.title}</h3>
+                  <p className="text-xs text-muted-foreground">{feature.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground">
-            &copy; 2024 PigeonHole. Built with love for collectors.
+      <footer className="py-6 px-4 border-t border-border">
+        <div className="max-w-md mx-auto text-center">
+          <p className="text-xs text-muted-foreground">
+            &copy; 2024 PigeonHole
           </p>
         </div>
       </footer>

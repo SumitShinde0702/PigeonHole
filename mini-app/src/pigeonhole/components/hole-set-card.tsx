@@ -64,85 +64,35 @@ export const HoleSetCard: React.FC<HoleSetCardProps> = ({
   const colors = getThemeColors(holeSet.theme);
 
   return (
-    <Card className={`
-      relative overflow-hidden transition-all duration-200 hover:shadow-xl
-      bg-gradient-to-br ${colors.bg} border ${colors.border}
-      ${holeSet.isActive ? 'opacity-100' : 'opacity-60'}
-    `}>
-      <div className="relative p-4">
-        <div className="flex items-start gap-4">
-          {/* Left column: name + description + meta */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between gap-2 mb-1">
-              <h3 className="text-base font-semibold text-white truncate">
-                {holeSet.name}
-              </h3>
-              <Badge 
-                variant="secondary" 
-                className={`${colors.accent} bg-white/20 border-white/30 whitespace-nowrap`}
-              >
-                {holeSet.theme}
-              </Badge>
-            </div>
-            <p className="text-white/75 text-xs line-clamp-2">
-              {holeSet.description}
-            </p>
-
-            {/* Progress bar */}
-            <div className="mt-3">
-              <div className="flex justify-between items-center mb-1">
-                <span className="text-[11px] text-white/75">Progress</span>
-                <span className="text-[11px] font-medium text-white">
-                  {openedCount}/{holeSet.totalHoles}
-                </span>
-              </div>
-              <div className="w-full bg-white/20 rounded-full h-1.5">
-                <div
-                  className={`h-1.5 rounded-full bg-gradient-to-r ${colors.button.replace('bg-gradient-to-r ', '').replace(' hover:from-purple-700 hover:to-pink-700', '').replace(' hover:from-green-700 hover:to-emerald-700', '').replace(' hover:from-orange-700 hover:to-yellow-700', '').replace(' hover:from-blue-700 hover:to-indigo-700', '').replace(' hover:from-gray-700 hover:to-gray-800', '')}`}
-                  style={{ width: `${progressPercentage}%` }}
-                />
-              </div>
-            </div>
-
-            {/* Stats row */}
-            <div className="mt-3 flex items-center gap-4 text-white/80">
-              <div className="flex items-center gap-1 text-[11px]">
-                <Package className="w-3.5 h-3.5 opacity-70" />
-                <span>Remaining</span>
-                <span className="font-semibold text-white ml-1">{remainingCount}</span>
-              </div>
-              <div className="flex items-center gap-1 text-[11px]">
-                <Coins className="w-3.5 h-3.5 opacity-70" />
-                <span>Cost</span>
-                <span className="font-semibold text-white ml-1">{holeSet.costPerHole}</span>
-              </div>
-              {holeSet.releaseDate && (
-                <div className="ml-auto flex items-center gap-1 text-[11px] text-white/70">
-                  <Calendar className="w-3.5 h-3.5" />
-                  <span>{new Date(holeSet.releaseDate).toLocaleDateString()}</span>
-                </div>
-              )}
-            </div>
+    <Card className="p-4 bg-card border-border hover:bg-muted/20 transition-colors">
+      <div className="flex items-center justify-between">
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="font-semibold text-foreground">
+              {holeSet.name}
+            </h3>
+            <Badge variant="outline" className="text-xs">
+              {holeSet.theme}
+            </Badge>
           </div>
-
-          {/* Right column: action */}
-          <div className="shrink-0 w-[140px] flex flex-col items-stretch gap-2">
-            <Button
-              onClick={() => onSelect(holeSet.id)}
-              disabled={!holeSet.isActive || !canAfford}
-              className={`
-                ${colors.button} text-white font-semibold text-sm py-2
-                ${!holeSet.isActive || !canAfford ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-md'}
-              `}
-            >
-              <Sparkles className="w-4 h-4 mr-1.5" />
-              {holeSet.isActive ? 'Open' : 'Soon'}
-            </Button>
-            {!canAfford && holeSet.isActive && (
-              <p className="text-[11px] text-red-300 text-center">Need {holeSet.costPerHole} coins</p>
-            )}
+          <p className="text-sm text-muted-foreground mb-2">
+            {holeSet.description}
+          </p>
+          
+          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+            <span>Progress: {openedCount}/{holeSet.totalHoles}</span>
+            <span>Cost: {holeSet.costPerHole} coins</span>
           </div>
         </div>
+        
+        <Button
+          onClick={() => onSelect(holeSet.id)}
+          disabled={!holeSet.isActive || !canAfford}
+          size="sm"
+          className="ml-3"
+        >
+          {holeSet.isActive ? 'Open' : 'Soon'}
+        </Button>
       </div>
     </Card>
   );
